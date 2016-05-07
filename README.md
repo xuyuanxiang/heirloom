@@ -21,7 +21,7 @@ Now, It contains:
 	+ store: Memory, Local Storage... 
 	+ policy: LRU, FIFO...
 	
-+ Witch is next?
++ Which is next?
 
 `REST` and `Retry` were inspired by the excellent [Spring]() framework.
              
