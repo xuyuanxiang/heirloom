@@ -1,0 +1,23 @@
+{
+  "name": "heirloom",
+  "version": "1.0.0",
+  "description": "My pure,reusable toolbox for front-end projects written in ES6 whithout any frameworks.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuyuanxiang/heirloom.git"
+  },
+  "keywords": [
+    "ES6",
+    "JavaScript"
+  ],
+  "author": "xuyuanxiang (chaos@xuyuanxiang.cn)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xuyuanxiang/heirloom/issues"
+  },
+  "homepage": "https://github.com/xuyuanxiang/heirloom#readme"
+}
