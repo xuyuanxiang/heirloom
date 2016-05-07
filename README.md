@@ -1,6 +1,6 @@
 # heirloom
 
-My pure, reusable toolbox for front-end projects written in ES6 whithout any frameworks.
+My pure, reusable toolbox for front-end projects written in ES6 without any third party frameworks.
 
 Comming soon... I'm coding with my poor time from work. So it's realy a long journey.
 
@@ -14,7 +14,7 @@ Now, It contains:
 	Provides interaction support with RESTful services.
 + Retry: 
   
-  Take `Simple Retry Policy` and `Fixed Back Off Policy` to catch a function's error and try to recover to expected state.
+  Take `Simple Retry Policy` and `Fixed Back Off Policy` to catch a function's error and try to recover it's expected state.
   
 + Cache:  Cache Policy.
 
