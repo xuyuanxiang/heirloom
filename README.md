@@ -2,7 +2,7 @@
 
 My pure, reusable toolbox for front-end projects written in ES6 without any third party frameworks.
 
-Comming soon... I'm coding with my poor time from work. So it's realy a long journey.
+Comming soon... I'm coding with my poor time from work. So it's really a long journey.
 
 Now, It contains: 
 
