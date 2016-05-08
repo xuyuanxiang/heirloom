@@ -5,10 +5,10 @@ var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
 
 
 module.exports = {
-    entry: [],
+    entry: ['./src/rest/http/index.js'],
     output: {
         path: path.join(__dirname, '/dist'),
-        filename: pkg.name + '-' + pkg.version + '.js'
+        filename: pkg.name + '-rest.js'
     },
     resolve: {
         extensions: ['', '.js']
