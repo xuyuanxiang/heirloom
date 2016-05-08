@@ -17,15 +17,9 @@
  * ...
  */
 
-import {noop, isDefined, isArray, isObject, isString, isFunction} from "../common/util"
-class HttpInterceptor {
+import {noop, isDefined, isArray, isObject, isString, isFunction} from "../../common/util"
 
-}
-class HttpConverters {
-
-}
-
-export class Http {
+export class HTTP {
     constructor({httpInterceptor, httpConvert}) {
 
     }

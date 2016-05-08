@@ -18,7 +18,7 @@
  */
 import {Route} from './Route'
 import {extend, isObject, isString} from '../common/util'
-import {Http} from './Http'
+import {Http} from './http/HTTP'
 
 const http = new Http();
 
