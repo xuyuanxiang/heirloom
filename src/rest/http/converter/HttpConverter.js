@@ -17,23 +17,23 @@
  * ...
  */
 export class HttpConverter {
-  constructor({supportedMediatypes=[]}={}) {
-    this.supportedMediatypes = supportedMediatypes;
+  constructor(supportedMediaTypes = []) {
+    this.supportedMediaTypes = supportedMediaTypes;
   }
 
-  canRead(responseText, mediaType) {
-    return this.supportedMediatypes.indexOf(mediaType) !== -1;
+  canRead(responseText, mediaType, xhr) {
+    return this.supportedMediaTypes.indexOf(mediaType) !== -1;
   }
 
-  canWrite(data, mediaType) {
-    return this.supportedMediatypes.indexOf(mediaType) !== -1;
+  canWrite(data, mediaType, xhr) {
+    return this.supportedMediaTypes.indexOf(mediaType) !== -1;
   }
 
-  read(responseText) {
+  read(responseText, xhr) {
     return responseText;
   }
 
-  write(data) {
+  write(data, xhr) {
     return data;
   }
 }

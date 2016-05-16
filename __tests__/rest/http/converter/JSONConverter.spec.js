@@ -6,7 +6,7 @@
  * ==================================================
  * @version 1.0.0
  * @author xuyuanxiang
- * @date 16/5/8
+ * @date 16/5/16
  * ==================================================
  * @version
  * @updator
@@ -16,15 +16,8 @@
  * ==================================================
  * ...
  */
-import {HttpConverter} from './HttpConverter';
+import {JSONConverter} from '../../../../src/rest/http/converter/JSONConverter';
 
-export class JSONConverter extends HttpConverter {
-  constructor() {
-    super(['application/json']);
-  }
+describe("JSONConverter", ()=> {
 
-  canRead(responseText, mediaType, xhr) {
-    super.canRead(responseText, mediaType);
-  }
-
-}
+});
