@@ -17,7 +17,7 @@
  * ...
  */
 jest.unmock('../../src/rest/http');
-import {HTTP} from "../../src/rest/http/HTTP";
+import {HTTP} from "../../src/rest/http/Http";
 
 describe('HTTP', ()=> {
 

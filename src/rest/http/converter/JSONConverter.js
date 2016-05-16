@@ -16,8 +16,8 @@
  * ==================================================
  * ...
  */
+import {HttpConverter} from './HttpConverter';
 
-import {RestTemplate} from './RestTemplate';
-import {Http, Interceptors, Converters} from './http';
+export class JSONConverter extends HttpConverter {
 
-export {RestTemplate};
+}

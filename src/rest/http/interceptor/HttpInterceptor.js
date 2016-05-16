@@ -6,7 +6,7 @@
  * ==================================================
  * @version 1.0.0
  * @author xuyuanxiang
- * @date 16/5/8
+ * @date 16/5/16
  * ==================================================
  * @version
  * @updator
@@ -16,8 +16,20 @@
  * ==================================================
  * ...
  */
+export class HttpInterceptor {
+  request() {
 
-import {RestTemplate} from './RestTemplate';
-import {Http, Interceptors, Converters} from './http';
+  }
 
-export {RestTemplate};
+  requestError() {
+
+  }
+
+  response() {
+
+  }
+
+  responseError() {
+
+  }
+}

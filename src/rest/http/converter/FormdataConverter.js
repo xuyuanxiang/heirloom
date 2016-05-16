@@ -16,3 +16,8 @@
  * ==================================================
  * ...
  */
+import {HttpConverter} from './HttpConverter';
+
+export class FormdataConverter extends HttpConverter {
+
+}
