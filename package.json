@@ -10,7 +10,8 @@
     "prebuild:watch": "rm -rf dist",
     "build:watch": "webpack -d --watch",
     "prebuild": "rm -rf dist",
-    "build": "babel src -d dist"
+    "build": "webpack",
+    "release": "NODE_ENV=production npm run build"
   },
   "repository": {
     "type": "git",

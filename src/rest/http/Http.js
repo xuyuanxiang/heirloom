@@ -18,14 +18,19 @@
  */
 
 import {noop, isDefined, isArray, isObject, isString, isFunction} from "../../common/util";
-import {HttpConverter} from './convert';
-import {HttpInterceptor} from './interceptor';
+import {ClientHttpRequestFactory} from './ClientHttpRequestFactory';
 
 export class Http {
 
-  constructor({httpInterceptors=[], httpConverters=[]}={}) {
+  constructor({
+    httpInterceptors=[],
+    messageConverters=[],
+    clientHttpRequestFactory=new ClientHttpRequestFactory(),
+    errorHandler =
+  }={}) {
     this.httpInterceptors = httpInterceptors;
-    this.httpConverters = httpConverters;
+    this.messageConverters = messageConverters;
+    this.clientHttpRequestFactory = clientHttpRequestFactory;
   }
 
   request({url='', method='GET', data={}, success=noop, error=noop, headers={}, withCredentials=true}={}) {
@@ -49,11 +54,11 @@ export class Http {
         }
       };
 
-      for (let interceptor of this.httpInterceptors) {
-        if (interceptor instanceof HttpInterceptor) {
-          interceptor.request();
-        }
-      }
+      // for (let interceptor of this.httpInterceptors) {
+      //   if (interceptor instanceof HttpInterceptor) {
+      //     interceptor.request();
+      //   }
+      // }
       xhr.send(JSON.stringify(data));
     });
   }

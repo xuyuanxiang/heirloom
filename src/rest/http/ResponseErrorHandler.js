@@ -6,7 +6,7 @@
  * ==================================================
  * @version 1.0.0
  * @author xuyuanxiang
- * @date 16/5/8
+ * @date 16/5/16
  * ==================================================
  * @version
  * @updator
@@ -16,8 +16,14 @@
  * ==================================================
  * ...
  */
+import {ClientHttpResponse} from './ClientHttpResponse';
 
-import {RestTemplate} from './RestTemplate';
-import {Http} from './http';
-
-export {RestTemplate, Http};
+export class ResponseErrorHandler {
+  hasError(clientHttpResponse) {
+    if (clientHttpResponse instanceof ClientHttpResponse) {
+      clientHttpResponse.statusCode
+    } else {
+      return true;
+    }
+  }
+}

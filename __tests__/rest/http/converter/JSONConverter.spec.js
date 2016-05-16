@@ -19,5 +19,9 @@
 import {JSONConverter} from '../../../../src/rest/http/converter/JSONConverter';
 
 describe("JSONConverter", ()=> {
-
+  let converter;
+  beforEach(()=> {
+    converter = new JSONConverter();
+  });
+  
 });

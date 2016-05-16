@@ -16,14 +16,14 @@
  * ==================================================
  * ...
  */
-jest.unmock('../../src/rest/http');
-import {HTTP} from "../../src/rest/http/Http";
+// jest.unmock('../../src/rest/http');
+import {Http} from "../../src/rest/http/Http";
 
 describe('HTTP', ()=> {
 
-    it('#request', ()=> {
-        let http = new HTTP();
-        expect(true).toBe(true);
-    });
+  it('#request', ()=> {
+    let http = new Http();
+    expect(true).toBe(true);
+  });
 
 });

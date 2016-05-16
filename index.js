@@ -1,28 +1,26 @@
-/**
- * @name
- * @description
- * @usage
- *
- * ==================================================
- * @version 1.0.0
- * @author xuyuanxiang
- * @date 16/5/16
- * ==================================================
- * @version
- * @updator
- * @date
- * @changelog
- *
- * ==================================================
- * ...
- */
-class HttpConverter {
-  static supportedMediaTypes = [];
+var CalculatorMixin = Base => class extends Base {
+  calc() {
+    console.log('calc');
+  }
+};
+
+var RandomizerMixin = Base => class extends Base {
+  randomize() {
+    console.log('randomize');
+  }
+};
+
+class Foo {
+  foo() {
+    console.log('foo');
+  }
+}
+
+class Bar extends CalculatorMixin(RandomizerMixin(Foo)) {
 
 }
 
-class JSONConverter extends HttpConverter {
-  static supportedMediaTypes = ['application/json'];
-}
-
-var json = new JSONConverter();
+let bar = new Bar();
+bar.randomize(); // 'randomize'
+bar.calc(); // 'calc'
+bar.foo(); //  'foo'

@@ -6,7 +6,7 @@
  * ==================================================
  * @version 1.0.0
  * @author xuyuanxiang
- * @date 16/5/8
+ * @date 16/5/16
  * ==================================================
  * @version
  * @updator
@@ -16,8 +16,8 @@
  * ==================================================
  * ...
  */
-
-import {RestTemplate} from './RestTemplate';
-import {Http} from './http';
-
-export {RestTemplate, Http};
+export class ClientHttpResponse {
+  statusCode;
+  statusText;
+  body;
+}
