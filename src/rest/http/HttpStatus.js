@@ -28,7 +28,7 @@ export class HttpStatus {
   static Series = SERIES;
 
   constructor(status) {
-    status = status % 100;
+    status = (Number(status) / 100).toFixed();
     for (let key of Object.keys(SERIES)) {
       if (SERIES[key] == status) {
         this.series = key;
@@ -36,5 +36,4 @@ export class HttpStatus {
       }
     }
   }
-
 }

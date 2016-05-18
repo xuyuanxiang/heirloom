@@ -17,6 +17,16 @@
  * ...
  */
 
-export const warning = (expected, msg) => !!expected ? msg : console.warn(msg);
+export const warn = (expected, msg) => !!expected ? msg : console.warn(msg);
+export const error = (expected, msg) => {
+  if (!expected) {
+    if (msg instanceof Error) {
+      throw msg;
+    } else if (typeof msg === 'string') {
+      throw new Error(msg);
+    }
+  }
+};
 
-warning(false,"d");
+export const Assert = {warn, error};
+

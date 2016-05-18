@@ -6,7 +6,7 @@
  * ==================================================
  * @version 1.0.0
  * @author xuyuanxiang
- * @date 16/5/16
+ * @date 16/5/18
  * ==================================================
  * @version
  * @updator
@@ -16,14 +16,6 @@
  * ==================================================
  * ...
  */
-import {ClientHttpRequest} from './ClientHttpRequest';
-
-export class ClientHttpRequestFactory {
-
-  createRequest(url, httpMethod) {
-    let xhr = new XMLHttpRequest();
-    xhr.open(httpMethod, url);
-    xhr.status
-    return new ClientHttpRequest(xhr);
-  }
+export class HttpConnection {
+  
 }

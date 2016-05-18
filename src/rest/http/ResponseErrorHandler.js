@@ -16,12 +16,12 @@
  * ==================================================
  * ...
  */
-import {ClientHttpResponse} from './ClientHttpResponse';
+import {HttpResponse} from './HttpResponse';
 
 export class ResponseErrorHandler {
-  hasError(clientHttpResponse) {
-    if (clientHttpResponse instanceof ClientHttpResponse) {
-      clientHttpResponse.statusCode
+  hasError(response) {
+    if (response instanceof HttpResponse) {
+      return response.status !== 200;
     } else {
       return true;
     }

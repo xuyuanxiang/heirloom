@@ -18,19 +18,21 @@
  */
 
 import {noop, isDefined, isArray, isObject, isString, isFunction} from "../../common/util";
-import {ClientHttpRequestFactory} from './ClientHttpRequestFactory';
+import {HttpRequestFactory} from './HttpRequestFactory';
+import {ResponseErrorHandler} from './ResponseErrorHandler';
 
 export class Http {
 
   constructor({
-    httpInterceptors=[],
-    messageConverters=[],
-    clientHttpRequestFactory=new ClientHttpRequestFactory(),
-    errorHandler =
+    httpInterceptors = [],
+    messageConverters = [],
+    httpRequestFactory = new HttpRequestFactory(),
+    errorHandler = new ResponseErrorHandler()
   }={}) {
     this.httpInterceptors = httpInterceptors;
     this.messageConverters = messageConverters;
-    this.clientHttpRequestFactory = clientHttpRequestFactory;
+    this.httpRequestFactory = httpRequestFactory;
+    this.errorHandler = errorHandler;
   }
 
   request({url='', method='GET', data={}, success=noop, error=noop, headers={}, withCredentials=true}={}) {

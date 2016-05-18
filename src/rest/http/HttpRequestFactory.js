@@ -16,8 +16,14 @@
  * ==================================================
  * ...
  */
-export class ClientHttpResponse {
-  statusCode;
-  statusText;
-  body;
+import {HttpRequest} from './HttpRequest';
+
+export class HttpRequestFactory {
+
+  createRequest(url, httpMethod) {
+    let xhr = new XMLHttpRequest();
+    xhr.open(httpMethod, url);
+    xhr.status;
+    
+  }
 }
