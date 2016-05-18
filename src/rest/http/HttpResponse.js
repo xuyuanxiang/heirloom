@@ -21,19 +21,21 @@ import {error} from '../../common/assert';
 
 export class HttpResponse {
   responseType;
+  readyState;
   url;
   status;
   statusText;
   headers;
   body;
 
-  constructor({responseType='json', url='', status, statusText, headers={}, body=''}={}) {
+  constructor({responseType='json', url='', status, statusText, readyState, headers={}, body=''}={}) {
     this.responseType = responseType;
     this.url = url;
     this.status = status;
     this.statusText = statusText;
     this.headers = headers;
     this.body = body;
+    this.readyState = readyState;
   }
 
   json() {

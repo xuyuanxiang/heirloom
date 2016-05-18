@@ -16,6 +16,9 @@
  * ==================================================
  * ...
  */
-export class HttpConnection {
-  
+export class BrowserXHR {
+  build() {
+    let xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+  }
 }

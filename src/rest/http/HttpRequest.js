@@ -26,10 +26,10 @@ export class HttpRequest {
   body;
 
   constructor({headers={}, method='GET', url='', body=''}={}) {
-    error(isString(method), new TypeError(`"method" expected String`));
-    error(isString(url), new TypeError(`"url" expected String`));
-    error(isString(body), new TypeError(`"body" expected String`));
-    
+    error(isString(method), new TypeError('"method" expected: String'));
+    error(isString(url), new TypeError('"url" expected: String'));
+    error(isString(body), new TypeError('"body" expected: String'));
+
     this.headers = headers;
     this.method = method;
     this.url = url;
