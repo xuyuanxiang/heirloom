@@ -37,6 +37,7 @@ export class Http {
 
   request({url='', method='GET', params, headers={}, withCredentials=true}={}) {
     let body = '';
+    //TODO params 2 string...
     let request = new HttpRequest({headers, url, method, withCredentials, body});
     let connection = BrowserXHRConnection.getDefaultConnection(request);
     return connection.execute();
