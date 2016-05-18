@@ -18,11 +18,11 @@
  */
 
 import {noop, isDefined, isArray, isObject, isString, isFunction} from "../../common/util";
-import {HttpRequestFactory} from './HttpRequestFactory';
+import {BrowserXHRConnection} from './BrowserXHRConnection';
+import {HttpRequest} from './HttpRequest';
 import {ResponseErrorHandler} from './ResponseErrorHandler';
 
 export class Http {
-
   constructor({
     httpInterceptors = [],
     messageConverters = [],
@@ -35,39 +35,27 @@ export class Http {
     this.errorHandler = errorHandler;
   }
 
-  request({url='', method='GET', data={}, success=noop, error=noop, headers={}, withCredentials=true}={}) {
-    return new Promise((resolve, reject) => {
-      let xhr = XMLHttpRequest();
-      xhr.open(method, url);
-      xhr.withCredentials = withCredentials;
-
-      for (let name in headers) {
-        xhr.setRequestHeader(name, headers[name]);
-      }
-      xhr.onreadystatechange = () => {
-        switch (xhr.readyState) {
-          case XMLHttpRequest.DONE:
-
-        }
-        if (xhr.readyState == XMLHttpRequest.DONE) {
-          if (xhr.status == 200) {
-            resolve(xhr.responseText);
-          }
-        }
-      };
-
-      // for (let interceptor of this.httpInterceptors) {
-      //   if (interceptor instanceof HttpInterceptor) {
-      //     interceptor.request();
-      //   }
-      // }
-      xhr.send(JSON.stringify(data));
-    });
+  request({url='', method='GET', params, headers={}, withCredentials=true}={}) {
+    let body = '';
+    let request = new HttpRequest({headers, url, method, withCredentials, body});
+    let connection = BrowserXHRConnection.getDefaultConnection(request);
+    return connection.execute();
   }
 
   get(url, params) {
+    return this.request({})
+  }
+
+  post() {
 
   }
 
+  delete() {
+
+  }
+
+  patch() {
+
+  }
 }
 

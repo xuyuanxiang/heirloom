@@ -16,27 +16,34 @@
  * ==================================================
  * ...
  */
+import {Connection} from './Connection';
 import {HttpRequest} from './HttpRequest';
 import {HttpResponse} from './HttpResponse';
 import {isDefined} from '../../common/util';
 import {error} from '../../common/assert';
-import {BrowserXHR} from './BrowserXHR';
 
-export class XHRConnection {
+export class BrowserXHRConnection extends Connection {
   request;
   response;
-  xhr;
 
-  constructor(request, response, xhr = new BrowserXHR().build()) {
+  static getDefaultConnection(request) {
+    let response = new HttpResponse({responseType: 'json'});
+    return new BrowserXHRConnection(request, response);
+  }
+
+  constructor(request, response) {
     error(isDefined(request) && request instanceof HttpRequest,
       new TypeError('"request" expected: HttpRequest'));
     error(isDefined(response) && response instanceof HttpResponse,
       new TypeError('"response" expected: HttpResponse'));
-    this.xhr = xhr;
+    this.request = request;
+    this.response = response;
   }
 
   execute() {
-    const {request, response, xhr} = this;
+    const xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+    const {request, response} = this;
     const {method, url, headers, body} = request;
     return new Promise((resolve, reject)=> {
       xhr.open(method, url);
@@ -60,5 +67,4 @@ export class XHRConnection {
       xhr.send(body);
     });
   }
-
 }

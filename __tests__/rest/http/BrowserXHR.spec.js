@@ -16,9 +16,13 @@
  * ==================================================
  * ...
  */
-export class BrowserXHR {
-  build() {
-    let xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
-  }
-}
+import {BrowserXHR} from '../../../src/rest/http/BrowserXHR';
+
+describe('BrowserXHR', ()=> {
+  it('#build return an instance of XMLHttpRequest', ()=> {
+    let browserXHR = new BrowserXHR();
+    let xhr = browserXHR.build();
+    console.log(xhr);
+    // expect(xhr instanceof XMLHttpRequest).toBe(true);
+  });
+});

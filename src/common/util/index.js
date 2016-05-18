@@ -32,4 +32,6 @@ export const noop = function () {
   , isArray = array => Array.isArray(array)
   , isJsObject = o => o !== null && (typeof o === "function" || typeof o === "object")
   , isPresent = obj => obj !== undefined && obj !== null
+  , isBoolean = b => typeof b === 'boolean'
+  , isMap = m => isDefined(m) && m instanceof Map
   ;
